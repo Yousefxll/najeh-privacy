@@ -1,125 +1,238 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سياسة الخصوصية - ناجح</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, 'SF Pro Display', 'Helvetica Neue', sans-serif;
-            background: #F0FDFA;
-            color: #134E4A;
-            line-height: 1.8;
-            padding: 40px 20px;
-        }
-        .container {
-            max-width: 700px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 16px;
-            padding: 40px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-        }
-        h1 {
-            font-size: 28px;
-            margin-bottom: 8px;
-            color: #0D9488;
-        }
-        .subtitle { font-size: 14px; color: #6B7280; margin-bottom: 32px; }
-        h2 { font-size: 18px; margin-top: 28px; margin-bottom: 12px; color: #0F766E; }
-        p, li { font-size: 15px; color: #374151; margin-bottom: 8px; }
-        ul { padding-right: 20px; margin-bottom: 16px; }
-        .en { direction: ltr; text-align: left; margin-top: 60px; padding-top: 40px; border-top: 1px solid #E5E7EB; }
-        .footer { text-align: center; margin-top: 40px; font-size: 13px; color: #9CA3AF; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ناجح - المستندات القانونية | Najeh - Legal</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Tahoma, sans-serif;
+    background: linear-gradient(135deg, #F0FDFA 0%, #CCFBF1 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    color: #134E4A;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { background: linear-gradient(135deg, #042F2E 0%, #134E4A 100%); color: #E8FFF9; }
+    .card { background: rgba(255,255,255,0.04); backdrop-filter: blur(10px); }
+    .doc-link { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.1); }
+    .doc-link:hover { background: rgba(255,255,255,0.1); }
+    .footer { color: rgba(255,255,255,0.6); }
+    h1, h2 { color: #5EEAD4; }
+  }
+  .card {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 48px 40px;
+    max-width: 540px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(13, 148, 136, 0.15);
+    text-align: center;
+  }
+  .logo {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #0D9488 0%, #14B8A6 100%);
+    border-radius: 22px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    color: white;
+    font-weight: 700;
+    box-shadow: 0 8px 24px rgba(13, 148, 136, 0.3);
+  }
+  h1 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #0D9488;
+    margin-bottom: 8px;
+  }
+  .tagline {
+    font-size: 15px;
+    color: #6B7280;
+    margin-bottom: 36px;
+  }
+  h2 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0F766E;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+  }
+  .docs {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+  .doc-link {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 20px;
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 14px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+  }
+  .doc-link:hover {
+    border-color: #0D9488;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(13, 148, 136, 0.12);
+  }
+  .doc-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 22px;
+  }
+  .doc-icon.privacy { background: rgba(13, 148, 136, 0.12); color: #0D9488; }
+  .doc-icon.terms { background: rgba(124, 58, 237, 0.12); color: #7C3AED; }
+  .doc-info { flex: 1; text-align: start; }
+  .doc-title { font-size: 16px; font-weight: 700; margin-bottom: 2px; }
+  .doc-desc { font-size: 13px; color: #6B7280; }
+  .arrow {
+    color: #9CA3AF;
+    font-size: 18px;
+  }
+  .footer {
+    font-size: 12px;
+    color: #9CA3AF;
+    line-height: 1.7;
+  }
+  .footer a { color: #0D9488; text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+  .lang-toggle {
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+  }
+  .lang-toggle button {
+    background: none;
+    border: 1px solid #E5E7EB;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    cursor: pointer;
+    color: inherit;
+    font-family: inherit;
+  }
+  .lang-toggle button.active {
+    background: #0D9488;
+    color: white;
+    border-color: #0D9488;
+  }
+  .english { display: none; direction: ltr; text-align: left; }
+  .english.active { display: block; }
+  .arabic.hidden { display: none; }
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1>سياسة الخصوصية</h1>
-        <p class="subtitle">آخر تحديث: ٢٨ مارس ٢٠٢٦</p>
 
-        <h2>مقدمة</h2>
-        <p>تطبيق "ناجح" يحترم خصوصيتك ويلتزم بحماية بياناتك الشخصية. توضح هذه السياسة كيف نتعامل مع معلوماتك.</p>
+<div class="card">
+  <div class="lang-toggle">
+    <button class="active" onclick="switchLang('ar')" id="btnAr">العربية</button>
+    <button onclick="switchLang('en')" id="btnEn">English</button>
+  </div>
 
-        <h2>البيانات التي نجمعها</h2>
-        <ul>
-            <li><strong>بيانات الحساب:</strong> التخصص الطبي، المستوى الدراسي، تاريخ الاختبار (تُخزّن محلياً على جهازك فقط)</li>
-            <li><strong>بيانات الاستخدام:</strong> تقدمك في الدراسة، نتائج الاختبارات، الإجابات (تُخزّن محلياً على جهازك فقط)</li>
-            <li><strong>بيانات الاشتراك:</strong> تتم معالجتها بالكامل عبر Apple ولا نملك وصولاً لمعلومات الدفع</li>
-        </ul>
+  <div class="logo">ن</div>
+  <h1>ناجح</h1>
 
-        <h2>المساعد الذكي (AI)</h2>
-        <p>عند استخدام المساعد الذكي، تُرسل أسئلتك إلى خدمة الذكاء الاصطناعي لتوليد الإجابات. لا نخزّن محادثاتك على خوادمنا ولا نستخدمها لأي غرض آخر.</p>
-
-        <h2>تخزين البيانات</h2>
-        <p>جميع بياناتك تُخزّن محلياً على جهازك باستخدام UserDefaults. لا نرسل بياناتك الشخصية إلى أي خادم خارجي.</p>
-
-        <h2>مشاركة البيانات</h2>
-        <p>لا نبيع أو نشارك أو نؤجر بياناتك الشخصية لأي طرف ثالث.</p>
-
-        <h2>الاشتراكات</h2>
-        <ul>
-            <li>الاشتراك الشهري: ١٤.٩٩ ر.س / شهرياً</li>
-            <li>الاشتراك السنوي: ٩٩.٩٩ ر.س / سنوياً</li>
-            <li>يتجدد الاشتراك تلقائياً ما لم يتم إلغاؤه قبل ٢٤ ساعة من نهاية الفترة</li>
-            <li>يمكن إدارة الاشتراك أو إلغاؤه من إعدادات حساب Apple</li>
-        </ul>
-
-        <h2>حقوقك</h2>
-        <ul>
-            <li>حذف بياناتك: يمكنك حذف التطبيق وستُحذف جميع البيانات</li>
-            <li>إلغاء الاشتراك: من إعدادات Apple ID في أي وقت</li>
-        </ul>
-
-        <h2>التواصل</h2>
-        <p>لأي استفسار حول سياسة الخصوصية، تواصل معنا عبر البريد الإلكتروني:</p>
-        <p><strong>najeh.app.support@gmail.com</strong></p>
-
-        <!-- English Version -->
-        <div class="en">
-            <h1>Privacy Policy</h1>
-            <p class="subtitle">Last updated: March 28, 2026</p>
-
-            <h2>Introduction</h2>
-            <p>Najeh app respects your privacy and is committed to protecting your personal data. This policy explains how we handle your information.</p>
-
-            <h2>Data We Collect</h2>
-            <ul>
-                <li><strong>Account Data:</strong> Medical specialty, degree level, exam date (stored locally on your device only)</li>
-                <li><strong>Usage Data:</strong> Study progress, quiz results, answers (stored locally on your device only)</li>
-                <li><strong>Subscription Data:</strong> Processed entirely through Apple. We do not have access to payment information</li>
-            </ul>
-
-            <h2>AI Assistant</h2>
-            <p>When using the AI assistant, your questions are sent to an AI service to generate responses. We do not store your conversations on our servers or use them for any other purpose.</p>
-
-            <h2>Data Storage</h2>
-            <p>All your data is stored locally on your device using UserDefaults. We do not send your personal data to any external server.</p>
-
-            <h2>Data Sharing</h2>
-            <p>We do not sell, share, or rent your personal data to any third party.</p>
-
-            <h2>Subscriptions</h2>
-            <ul>
-                <li>Monthly subscription: 14.99 SAR/month</li>
-                <li>Yearly subscription: 99.99 SAR/year</li>
-                <li>Subscriptions auto-renew unless cancelled at least 24 hours before the end of the current period</li>
-                <li>Subscriptions can be managed or cancelled from Apple ID settings</li>
-            </ul>
-
-            <h2>Your Rights</h2>
-            <ul>
-                <li>Delete your data: Uninstall the app and all data will be deleted</li>
-                <li>Cancel subscription: From Apple ID settings at any time</li>
-            </ul>
-
-            <h2>Contact</h2>
-            <p>For any questions about this privacy policy, contact us at:</p>
-            <p><strong>najeh.app.support@gmail.com</strong></p>
+  <!-- Arabic -->
+  <div class="arabic">
+    <div class="tagline">حضّر لاختبار الهيئة بذكاء</div>
+    <h2>المستندات القانونية</h2>
+    <div class="docs">
+      <a href="privacy.html" class="doc-link">
+        <div class="doc-icon privacy">🔒</div>
+        <div class="doc-info">
+          <div class="doc-title">سياسة الخصوصية</div>
+          <div class="doc-desc">كيف نتعامل مع بياناتك</div>
         </div>
-
-        <p class="footer">© 2026 Najeh App. All rights reserved.</p>
+        <div class="arrow">←</div>
+      </a>
+      <a href="terms.html" class="doc-link">
+        <div class="doc-icon terms">📋</div>
+        <div class="doc-info">
+          <div class="doc-title">شروط الاستخدام</div>
+          <div class="doc-desc">قواعد استخدام التطبيق والاشتراكات</div>
+        </div>
+        <div class="arrow">←</div>
+      </a>
     </div>
+    <div class="footer">
+      للاستفسارات: <a href="mailto:support@najeh.app">support@najeh.app</a><br>
+      © 2026 ناجح
+    </div>
+  </div>
+
+  <!-- English -->
+  <div class="english">
+    <div class="tagline">Prepare for SCFHS Exams Smartly</div>
+    <h2>Legal Documents</h2>
+    <div class="docs">
+      <a href="privacy.html" class="doc-link">
+        <div class="doc-icon privacy">🔒</div>
+        <div class="doc-info">
+          <div class="doc-title">Privacy Policy</div>
+          <div class="doc-desc">How we handle your data</div>
+        </div>
+        <div class="arrow">→</div>
+      </a>
+      <a href="terms.html" class="doc-link">
+        <div class="doc-icon terms">📋</div>
+        <div class="doc-info">
+          <div class="doc-title">Terms of Service</div>
+          <div class="doc-desc">App usage and subscription terms</div>
+        </div>
+        <div class="arrow">→</div>
+      </a>
+    </div>
+    <div class="footer">
+      Inquiries: <a href="mailto:support@najeh.app">support@najeh.app</a><br>
+      © 2026 Najeh
+    </div>
+  </div>
+</div>
+
+<script>
+function switchLang(lang) {
+  const ar = document.querySelector('.arabic');
+  const en = document.querySelector('.english');
+  const html = document.documentElement;
+  const btnAr = document.getElementById('btnAr');
+  const btnEn = document.getElementById('btnEn');
+  if (lang === 'ar') {
+    ar.classList.remove('hidden');
+    en.classList.remove('active');
+    html.lang = 'ar'; html.dir = 'rtl';
+    btnAr.classList.add('active');
+    btnEn.classList.remove('active');
+  } else {
+    ar.classList.add('hidden');
+    en.classList.add('active');
+    html.lang = 'en'; html.dir = 'ltr';
+    btnEn.classList.add('active');
+    btnAr.classList.remove('active');
+  }
+}
+</script>
+
 </body>
 </html>
